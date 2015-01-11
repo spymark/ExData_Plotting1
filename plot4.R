@@ -23,8 +23,8 @@ png(filename = 'plot4.png', width = 480, height = 480, units = "px")
 par(mfrow= c(2,2))
 
 
-plot(df$DateTime, df$Global_active_power, type='n', xlab ='', ylab ='Global Active Power')
-lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
+plot(df$DateTime, df$Global_active_power, type='l', xlab ='', ylab ='Global Active Power')
+#lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
 
 plot(df$DateTime, df$Voltage, type ='l', xlab = 'datetime', ylab = 'Voltage')
 

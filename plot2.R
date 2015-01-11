@@ -20,7 +20,7 @@ df$DateTime <- as.POSIXct(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S")
 #plot2
 png(filename = 'plot2.png', width = 480, height = 480, units = "px")
 
-plot(df$DateTime, df$Global_active_power, type='n', xlab ='', ylab ='Global Active Power (kilowats)')
-lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
+plot(df$DateTime, df$Global_active_power, type='l', xlab ='', ylab ='Global Active Power (kilowatts)')
+#lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
 
 dev.off()
