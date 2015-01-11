@@ -32,29 +32,34 @@ lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
 #dev.off()
 
 #plot3
+#png(filename = 'plot3.png', width = 480, height = 480, units = "px")
+plot(df$DateTime, df$Sub_metering_1, type='n',xlab = '', ylab ='Energy sub metering')
+lines(x=df$DateTime, y = df$Sub_metering_1, type = 'l', col = 'black')
+lines(x=df$DateTime, y = df$Sub_metering_2, type = 'l', col = 'red')
+lines(x=df$DateTime, y = df$Sub_metering_3, type = 'l', col = 'blue')
+legend('topright', col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 
+'Sub_metering_2', 'Sub_metering_1'), lwd = 1)
+#dev.off()
+
+#plot4
+#png(filename = 'plot4.png', width = 480, height = 480, units = "px")
+par(mfrow= c(2,2))
+
+
+plot(df$DateTime, df$Global_active_power, type='n', xlab ='', ylab ='Global Active Power (kilowats)')
+lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
+
+plot(df$DateTime, df$Voltage, type ='l', xlab = 'datetime', ylab = 'Voltage')
+
 plot(df$DateTime, df$Sub_metering_1, type='n',xlab = 'LOL', ylab ='FATO')
 lines(x=df$DateTime, y = df$Sub_metering_1, type = 'l', col = 'black')
 lines(x=df$DateTime, y = df$Sub_metering_2, type = 'l', col = 'red')
 lines(x=df$DateTime, y = df$Sub_metering_3, type = 'l', col = 'blue')
 legend('topright', col = c('black', 'red', 'blue'), legend = c('Sub_metering_1', 
-'Sub_metering_2', 'Sub_metering_1'))
+                                                               'Sub_metering_2', 'Sub_metering_1'), lwd = 1)
 
-
-#plot4
-par(mfrow= c(2,2))
-
-plot(df$DateTime, df$Global_active_power, type='n',xlab = 'LOL', ylab ='FATO')
-lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
-
-plot(c)
-
-plot(df$DateTime, df$Sub_metering_1, type='n',xlab = 'LOL', ylab ='FATO')
-lines(x=df$DateTime, y = df$Sub_metering_1, type = 'l', col = 'black')
-lines(x=df$DateTime, y = df$Sub_metering_2, type = 'l', col = 'red')
-lines(x=df$DateTime, y = df$Sub_metering_3, type = 'l', col = 'blue')
-
-plot(c)
+plot(df$DateTime, df$Global_reactive_power, type = 'l', ylab = 'Global_reactive_power', xlab ='datetime')
 
 par(mfrow=c(1,1))
-
+#dev.off()
 
