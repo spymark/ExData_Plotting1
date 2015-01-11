@@ -18,12 +18,15 @@ setnames(df,names(df),c('Date', 'Time', 'Global_active_power', 'Global_reactive_
 df$DateTime <- as.POSIXct(paste(df$Date, df$Time), format="%d/%m/%Y %H:%M:%S") 
 
 #plot1
-hist(df$Global_active_power, main = 'Global Active Power')
+#png(filename = 'plot1.png', width = 480, height = 480, units = "px")
+hist(df$Global_active_power, main = 'Global Active Power', xlab ='Global Active Power (kilowats)' , col = 'red')
+#dev.off()
+
 
 #plot2
 #png(filename = 'plot2.png', width = 480, height = 480, units = "px")
 
-plot(df$DateTime, df$Global_active_power, type='n',xlab = 'LOL', ylab ='FATO')
+plot(df$DateTime, df$Global_active_power, type='n', xlab ='', ylab ='Global Active Power (kilowats)')
 lines(x=df$DateTime, y = df$Global_active_power, type = 'l')
 
 #dev.off()
